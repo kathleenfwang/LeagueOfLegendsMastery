@@ -32,7 +32,8 @@ app.get('/summonerIDs', (req, res,next) => {
         	let masteryCount = 0; 
  			for (let i=0;i<champions.length;i++ ) {  
 	 			if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
-	 			if (champions.championLevel == 7) { masteryCount++ }
+
+	 			if (champions.championLevel == "7") { masteryCount++ }
 	 		}
 	 		console.log(noChest)
 
