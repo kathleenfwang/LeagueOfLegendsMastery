@@ -29,12 +29,14 @@ app.get('/summonerIDs', (req, res,next) => {
     		let champions = response2
         	console.log('sending response2')
         	let noChest = []  
+        	let masteryCount = 0; 
  			for (let i=0;i<champions.length;i++ ) {  
 	 			if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
+	 			if (champions.championLevel == 7) { masteryCount++ }
 	 		}
 	 		console.log(noChest)
 
-	 		res.render('champions', {champions:champions, noChest:noChest})
+	 		res.render('champions', {champions:champions, noChest:noChest, masteryCount:masteryCount})
 	 		return noChest
 	})
  
