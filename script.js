@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000;
 
 const API_KEY = '******************'
-let url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/terracemouse?api_key=' + API_KEY 
 
 //view engine to ejs: 
 app.set('view engine','ejs'); 
