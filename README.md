@@ -1,10 +1,13 @@
 # League Of Legends Champion Information
 Champion info for league of legends account based on summoner name. 
 
+View live [here](https://lolchampioninfo.herokuapp.com/)
+
 Work in progress! 
 ## Features: 
 - Pulls information from official League of Legends API for total champions 
 - Pulls information for total number of champions without a chest obtained 
+- Displays a count for total number of champions with Mastery Level 7
 
 
 ## Future additions: 
@@ -23,3 +26,4 @@ Work in progress!
 - Node.js 
 - EJS 
 - SemanticUI 
+- Heroku 
