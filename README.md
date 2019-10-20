@@ -1,4 +1,4 @@
-# LeagueOfLegendsChampionInfo
+# League Of Legends Champion Information
 champion info for league of legends account
 Work in progress! 
 
