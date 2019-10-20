@@ -4,9 +4,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000;
 
-const API_KEY = 'RGAPI-e030a1e9-fc09-4fda-8c84-920adb1df51a'
+const API_KEY = 'RGAPI-054a0139-18e3-4f4a-a17d-78c61a192531'
 let url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/terracemouse?api_key=' + API_KEY 
 
+console.log("TESTING TESTING TEST")
 //view engine to ejs: 
 app.set('view engine','ejs'); 
  
