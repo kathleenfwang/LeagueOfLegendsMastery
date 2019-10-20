@@ -1,7 +1,6 @@
 # League Of Legends Champion Information
 Champion info for league of legends account based on summoner name. 
 
-Work in progress! 
 ## Features: 
 - Pulls information from official League of Legends API for total champions 
 - Pulls information for total number of champions without a chest obtained 
