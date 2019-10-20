@@ -25,7 +25,7 @@ npm install
 ```sh
 const API_KEY = '******************'
 ```
-- Run: node script.js 
+- Run script page and open up localhost:3000!
 ```sh
 node script.js
 ```
