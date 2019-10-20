@@ -1,5 +1,6 @@
 # League Of Legends Champion Information
 Champion info for league of legends account based on summoner name. 
+View work in progress [here](https://lolchampioninfo.herokuapp.com/)
 
 ## Features: 
 - Pulls information from official League of Legends API for total champions 
