@@ -11,6 +11,24 @@ Champion info for league of legends account based on summoner name.
 - Data visuals 
   - pie chart for no chest champions
   - bar graph for overall champion mastery 
+  
+## To Run Locally: 
+- Clone this repository: 
+```sh
+git clone https://github.com/kathleenfwang/leagueoflegendschampioninfo.git
+```
+- Instal dependencies:  
+```sh
+npm install
+```
+- Obtain a [Riot Developer Key](https://developer.riotgames.com/) and insert into const "key" variable 
+```sh
+const API_KEY = '******************'
+```
+- Run: node script.js 
+```sh
+node script.js
+```
 
 ## What I learned: 
 - Chaining promises and returning responses to new promises with "then"
