@@ -5,12 +5,6 @@ Champion info for league of legends account based on summoner name.
 - Pulls information from official League of Legends API for total champions 
 - Pulls information for total number of champions without a chest obtained 
 - Displays a count for total number of champions with Mastery Level 7
-
-
-## Future additions: 
-- Data visuals 
-  - pie chart for no chest champions
-  - bar graph for overall champion mastery 
   
 ## To Run Locally: 
 - Clone this repository: 
@@ -43,3 +37,8 @@ node script.js
 - EJS 
 - SemanticUI 
 - Heroku 
+
+## Future additions: 
+- Data visuals 
+  - pie chart for no chest champions
+  - bar graph for overall champion mastery 
