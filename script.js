@@ -31,17 +31,18 @@ app.get('/summonerIDs', (req, res,next) => {
         return make_API_call(url)
     })
     .then(response2 => {
-    		let champions = response2
-        	console.log('sending response2')
-        	let noChest = []  
-            let yesChest = [] 
-        	let masteryCount = 0; 
- 			for (let i=0;i<champions.length;i++ ) {  
-	 			if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
+	if (response2.status) res.render('error')
+    	let champions = response2
+        	
+        let noChest = []  
+        let yesChest = [] 
+        let masteryCount = 0; 
+ 	for (let i=0;i<champions.length;i++ ) {  
+	 	if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
                 if (champions[i].chestGranted) yesChest.push(champions[i].championId)
-	 			if (champions[i].championLevel == 7) { masteryCount++ }
-	 		}
-	 		console.log(noChest)
+	 	if (champions[i].championLevel == 7) { masteryCount++ }
+	 }
+	 
             let leagueObj = leagueChampions.data
             let leagueArr = Object.keys(leagueObj)
             let first = leagueArr[0] // 'Aatrox'
