@@ -41,7 +41,8 @@ node script.js
 - Heroku 
 
 ## Future additions: 
+- refractor code made to compile champion name list so it is cleaner  
 - Data visuals 
   - pie chart for no chest champions
   - bar graph for overall champion mastery 
->>>>>>> 0ff1658a30bd5a7fe17393c36d31520dd5371f98
+ 
