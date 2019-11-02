@@ -8,18 +8,27 @@
 
 </head>
 
-<h1> Champions </h1> 
+<h1 class ="ui teal header"> Champion Information for:   <%= sumID %>  </h1> 
 <h2> Total champions played: <%= champions.length %> / 145 </h2>
-<h2> Total Mastery Level 7s: <%= masteryCount %>
-<h3> Champions with No Chest: <%= noChest.length %>
-<h4> Champions with No Chest ID: 
-	<% let sorted = noChest.sort( (a,b) => a - b) %> 
-	<% sorted.forEach ( (key) => { %>
-	<li> <%= key %> </li>
+<h3 class ="ui orange header"> Total Mastery Level 7s: <%= masteryCount %> </h3>
+ <h3>Champions with no chest obtained (<%= noChest.length %>): </h3>
+ <div class="sub header"> 
+	<% noChestChamps.forEach ( (num) => { %>
+	  
+	 <li> <%= num %> </li>
 	<% }) %>
 
-</h4>
-<div id="myChart"> </div>
+</div>
+ <h3>Champions with chest granted (<%= 145 - noChest.length%>): </h3>
+ <div class="sub header">
+	<% yesChestChamps.forEach ( (num) => { %>
+	  
+	 <li> <%= num %> </li>
+	<% }) %>
+
+</div>
+  
+
 <h3> Future updates: </h3>
 <% Object.keys(champions[0]).forEach( (key) =>{ %>
 	<li> <%= key %> </li>
