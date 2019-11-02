@@ -5,12 +5,12 @@ const app = express()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000;
 
-<<<<<<< HEAD
+ 
 const API_KEY = 'RGAPI-24294f19-9cec-49bb-b702-6c5eea1a6104'
 let url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/terracemouse?api_key=' + API_KEY 
 =======
 const API_KEY = '******************'
->>>>>>> 0ff1658a30bd5a7fe17393c36d31520dd5371f98
+ 
 
 //view engine to ejs: 
 app.set('view engine','ejs'); 
