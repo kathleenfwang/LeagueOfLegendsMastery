@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-"# Twitter-Data-analysis" 
+ 
 =======
 # League Of Legends Champion Information
 Champion info for league of legends account based on summoner name. 
