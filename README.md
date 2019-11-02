@@ -1,7 +1,7 @@
 
 =======
 # League Of Legends Champion Information :video_game:
-### View live [here](https://lolchampioninfo.herokuapp.com/)
+### View live on Heroku [here](https://lolchampioninfo.herokuapp.com/)!
 Champion info for league of legends account based on summoner name. 
 
 ## Features: 
