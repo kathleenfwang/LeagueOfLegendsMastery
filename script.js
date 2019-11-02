@@ -43,31 +43,21 @@ app.get('/summonerIDs', (req, res,next) => {
 	 	if (champions[i].championLevel == 7) { masteryCount++ }
 	 }
 	 
-            let leagueObj = leagueChampions.data
-            let leagueArr = Object.keys(leagueObj)
-            let first = leagueArr[0] // 'Aatrox'
-            console.log(leagueObj[first].key)
-            //[ {name:key}]
-
-             let b = {} 
-            for (let name of leagueArr ) {
-                   
-                b[leagueObj[name].key] = name
-                                             
-                 
+       let leagueObj = leagueChampions.data
+       let leagueArr = Object.keys(leagueObj)
+       let first = leagueArr[0] // 'Aatrox'
+       let b = {} 
+      	 for (let name of leagueArr ) {
+              b[leagueObj[name].key] = name
             }
-            let noChestChamps = [] 
-            let yesChestChamps = [] 
-            //newArr = [ {'500':Aatrox}, {'1': 'Annie'}]
-            //noChest = [3,5,16,50,...]
-
-
-           for (let val in noChest) {
-          noChestChamps.push((b[noChest[val].toString()]))
-
+       let noChestChamps = [] 
+       let yesChestChamps = [] 
+	    
+          for (let val in noChest) {
+         	 noChestChamps.push((b[noChest[val].toString()]))
           }
-           for (let val in yesChest) {
-          yesChestChamps.push((b[yesChest[val].toString()]))
+          for (let val in yesChest) {
+          	yesChestChamps.push((b[yesChest[val].toString()]))
 
           }
           noChestChamps = noChestChamps.filter ( x =>{
