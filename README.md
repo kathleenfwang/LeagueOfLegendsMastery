@@ -8,7 +8,7 @@ Champion info for league of legends account based on summoner name.
 - Extracts information from official League of Legends API for summoner champion history 
 - Pulls information for total number of champions without a chest obtained and the list of champions 
 - Displays a count for total number of champions with Mastery Level 7
-- Lulu or Teemo Home Page theme :) 
+- Toggle between Lulu or Teemo Theme 
   
 ## To Run Locally: 
 - Clone this repository: 
