@@ -27,7 +27,7 @@ const API_KEY = '******************'
 ```sh
 node script.js
 ```
-Note: **If you are getting a server error, make sure the const "PORT" is set to 3000**
+Note: **If you are getting a server error, make sure the const "PORT" is set to 3000.**
 
 > Some styling and additional themes may not have been committed yet to this repository, so the hosted product and the cloned version will have different styling. Please feel free to contact me for the hosted version. 
 
