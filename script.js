@@ -31,50 +31,50 @@ app.get('/summonerIDs', (req, res,next) => {
         return make_API_call(url)
     })
     .then(response2 => {
-	if (response2.status) res.render('error')
-    	let champions = response2
-        	
-        let noChest = []  
-        let yesChest = [] 
-        let masteryCount = 0; 
- 	for (let i=0;i<champions.length;i++ ) {  
-	 	if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
-                if (champions[i].chestGranted) yesChest.push(champions[i].championId)
-	 	if (champions[i].championLevel == 7) { masteryCount++ }
-	 }
-	 
-       let leagueObj = leagueChampions.data
-       let leagueArr = Object.keys(leagueObj)
-       let first = leagueArr[0] // 'Aatrox'
-       let b = {} 
-      	 for (let name of leagueArr ) {
-              b[leagueObj[name].key] = name
+	  if (response2.status) res.render('error')
+          let champions = response2
+      
+          let mastery7 = [] 
+        	let noChest = []  
+            let yesChest = [] 
+        	let masteryCount = 0; 
+ 			for (let i=0;i<champions.length;i++ ) {  
+	 			if (!champions[i].chestGranted) noChest.push(champions[i].championId)  
+        if (champions[i].chestGranted) yesChest.push(champions[i].championId)
+	 			if (champions[i].championLevel == 7) { 
+          masteryCount++;  
+          mastery7.push(champions[i].championId)
+        }
+	 		}
+	 	 
+            let leagueObj = leagueChampions.data
+            let leagueArr = Object.keys(leagueObj)
+            let first = leagueArr[0] // 'Aatrox'
+            
+            //[ {name:key}]
+
+            let b = {} 
+            for (let name of leagueArr ) {
+                   
+                b[leagueObj[name].key] = name
+                                             
+                 
             }
-       let noChestChamps = [] 
-       let yesChestChamps = [] 
-	    
-          for (let val in noChest) {
-         	 noChestChamps.push((b[noChest[val].toString()]))
-          }
-          for (let val in yesChest) {
-          	yesChestChamps.push((b[yesChest[val].toString()]))
 
-          }
-          noChestChamps = noChestChamps.filter ( x =>{
-            return x
-          })
-          yesChestChamps = yesChestChamps.filter ( x =>{
-            return x
-          })
-          noChestChamps = noChestChamps.sort()
-          yesChestChamps = yesChestChamps.sort()
-            console.log(yesChest)
-           
-             
-	 		res.render('champions', { sumID:sumID, champions:champions, noChest:noChest, masteryCount:masteryCount,noChestChamps:noChestChamps, yesChestChamps:yesChestChamps })
-	 		 
-	})
+            function convertIdToChamp(ids) {
+              let champList = [] 
+              for (let val in ids) {
+                champList.push(b[ids[val].toString()]) 
+              }
+              champList = champList.filter ( x => x)
+              return champList.sort() 
+            }
 
+            let noChestChamps = convertIdToChamp(noChest) 
+            let yesChestChamps = convertIdToChamp(yesChest)
+            let mastery7Champs = convertIdToChamp(mastery7)
+          
+	 		res.render('champions', { sumID:sumID, champions:champions, masteryCount:masteryCount,noChestChamps:noChestChamps, yesChestChamps:yesChestChamps,mastery7Champs:mastery7Champs })
  
     .catch(next)
 })
