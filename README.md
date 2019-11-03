@@ -1,5 +1,5 @@
 
-=======
+
 # League Of Legends Champion Information :video_game:
 ### View live on Heroku [here](https://lolchampioninfo.herokuapp.com/)!
 Champion info for league of legends account based on summoner name. 
@@ -27,7 +27,8 @@ const API_KEY = '******************'
 ```sh
 node script.js
 ```
-** Note: If you are getting a server error, make sure the const "PORT" is set to 3000 
+**Note: If you are getting a server error, make sure the const "PORT" is set to 3000 
+**Note: Some styling and additional themes may not have been committed yet to this repository, so the hosted product and the cloned version will have different styling. 
 
 ## What I learned: 
 - Chaining promises and returning responses to new promises with "then"
