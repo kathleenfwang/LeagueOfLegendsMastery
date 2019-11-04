@@ -46,6 +46,7 @@ Note: **If you are getting a server error, make sure the const "PORT" is set to 
 
 ## Future additions: 
 - refractor code made to compile champion name list so it is cleaner  
+- sort the "no chest" champion list based on mastery points so players will have a better sense of which champions they can have a higher chance of obtaining a chest for 
 - **Better styling!!!**
 - Data visuals 
   - pie chart for no chest champions
