@@ -4,35 +4,156 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-     
+<style>
+	body {
+		background-image: url('http://getwallpapers.com/wallpaper/full/2/5/5/686395.jpg');
+		background-size:cover;
+		  background-attachment: fixed;
+		background-repeat: no-repeat;
+		color:#F0F0F0;
+	}
+	p {
+		margin:10px;
+	}
+	#inside {
+
+		border-radius:10px;
+		color:#141F3B;
+		background-color:#cfe4fc;
+		padding:20px;
+		margin:10px;
+		box-shadow: 5px 5px 3px 3px #484848 ;
+	}
+	#form {
+		padding: 5px;
+		border:2px solid 	#F0F0F0;
+		border-radius:5px;
+		margin-right:5px;
+
+	}
+	span{
+		color:#A3B4C8;
+	}
+ 
+ 	 
+ 	#first{
+ 		text-align:center;
+ 	}
+ 	a:hover {
+ 	 
+ 		position: relative; 
+             top: -5px;
+ 	}
+
+</style>     
 
 </head>
+<div id ="inside">
+ 
+  
+ <form   action = "/summonerIDs" method = "GET" > 
+	 
+    Search Again:  
+ 
+	<input type ="text" name = "id" placeholder="'Doublelift','C9 Sneaky'" id ="form"> 
+	 
 
-<h1 class ="ui teal header"> Champion Information for:   <%= sumID %>  </h1> 
-<h2> Total champions played: <%= champions.length %> / 145 </h2>
-<h3 class ="ui orange header"> Total Mastery Level 7s: <%= masteryCount %> </h3>
- <h3>Champions with no chest obtained (<%= noChest.length %>): </h3>
+	<button class="ui teal button small" type="submit">Submit</button>
+	<a href ="/" class = "ui mini purple button"> Lulu  <i class="home icon"></i> </a><a href ="/teemo" class = "ui mini yellow button"> Teemo  <i class="home icon"></i> </a>
+</form>
+
+ 
+<h1 class ="ui block header" id = "first"> Champion Information for: "<span>  <%= sumID %> </span>"</h1> 
+</div>
+<h2 class ="ui compact segment" style ="margin:2%;color:black;font-size:1em"> Total champions played: <%= champions.length %> / 145 </h2>
+
+
+<h2 class ="ui header horizontal divider" style ="padding:8px"> <img class="ui right spaced mini image" src="https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7a/Champion_Mastery_Level_7_Flair.png/revision/latest?cb=20150312005414">Total Mastery Level 7 Champions: <%= masteryCount %> </h2>
+<div style ="margin-left:25%">
+<% mastery7Champs.forEach ( (num) => { %>
+	  <% let url ="https://na.leagueoflegends.com/en/game-info/champions/" + num %>  
+
+	 <a style ="display: inline;text-align:center;color:black;margin:3px" class ="ui raised  yellow segment compact" target ="_blank" href = <%= url%>>  <%= num %> 
+	 	<% if (yesChestChamps.includes(num)) { %>
+ 			<i class ="ui yellow favorite icon"> </i>
+ 	<%} %>
+	<% }) %>
+
+
+	 </a>
+	 
+</div>
+
+
+<p style ="text-align:center;margin-top:2%"> <i class ="ui yellow favorite icon"></i> Next to name means chest obtained on champion </p>
+ 
+ <h3 class ="ui header horizontal divider " >Champions with no chest obtained (<%= noChestChamps.length %>): </h3>
+ <div style ="margin-left:3%">
+ <!-- 
  <div class="sub header"> 
+
 	<% noChestChamps.forEach ( (num) => { %>
-	  
-	 <li> <%= num %> </li>
+	    <% let url ="https://na.leagueoflegends.com/en/game-info/champions/" + num %>
+	 <li style ="display:inline-block;color:black;margin:2px" class ="ui segment compact"> <a href = "<%= url %>" target ="_blank"><%= num %> </a></li>
+	 
 	<% }) %>
 
 </div>
- <h3>Champions with chest granted (<%= 145 - noChest.length%>): </h3>
+--> 
+  <% noChestChamps.forEach ( (num) => { %>
+  		<% let red = "background-color:red" %>
+	    <% let champ ="https://na.leagueoflegends.com/en/game-info/champions/" + num %>
+	    <% let pic = "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/" + num + ".png" %>
+   
+	  <li class="ui compact tertiary segment" style ="display:inline-block;margin:4px">
+	 <a href = "<%= champ%>" target ="_blank" id ="noChest">  
+    <div class="image">
+    	
+      <img src = <%=pic %>>
+ 
+    </div>
+
+  
+    <div class="extra" style ="color:black;text-align: center">
+      <%=num %>
+ 
+	 </div>
+</a>
+	</li>
+
+	<% }) %>
+ 
+</div>
+ <h3 class ="ui header horizontal divider ">Champions with chest granted (<%= yesChestChamps.length%>): </h3>
+ <div style ="margin-left:3%">
  <div class="sub header">
 	<% yesChestChamps.forEach ( (num) => { %>
-	  
-	 <li> <%= num %> </li>
+	    <% let champ ="https://na.leagueoflegends.com/en/game-info/champions/" + num %>
+	    <% let pic = "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/" + num + ".png" %>
+	  <li class="ui segment inverted raised tertiary blue compact" style ="display:inline-block;margin:4px">
+	   <a href = "<%= champ%>" target ="_blank">
+    <div class="image">
+    	
+      <img src = <%=pic %>>
+ 
+    </div>
+    </a>
+    <div class="extra" style ="color:black;text-align: center">
+      <%=num %>
+      <i class="ui favorite icon yellow"></i>
+	 </div>
+
+	</li>
 	<% }) %>
-
-</div>
-  
-
+ </div>
+<div class ="ui white divider"></div>
+<p class ="ui compact inverted raised tertiary red segment" style ="margin-left:25%;color:black" > <i>Note: Some of the newer champion data are not included which is why the numbers for chest granted/without a chest are slightly lower than the actual amount. 
+ 
+</i></p>
 <h3> Future updates: </h3>
 <% Object.keys(champions[0]).forEach( (key) =>{ %>
 	<li> <%= key %> </li>
 
 <% }) %>
-
+</div>
 
